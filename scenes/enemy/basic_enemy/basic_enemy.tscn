@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dowk7ace7r3dg"]
+
+[ext_resource type="Script" path="res://scenes/enemy/basic_enemy/basic_enemy.gd" id="1_lnvdg"]
+[ext_resource type="Texture2D" uid="uid://q7u5xs4qkn3w" path="res://scenes/enemy/basic_enemy/tile_0124.png" id="2_edw6j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vftc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r42ei"]
+
+[node name="BasicEnemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_lnvdg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_edw6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2vftc")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_r42ei")
